@@ -71,4 +71,15 @@ class VagaControllerTest extends Specification {
         then:
         thrown(ResponseStatusException)
     }
+
+    void "Atualiza vaga"() {
+        given:
+        vaga.descricao = "Nova descrição"
+
+        when:
+        Vaga response = new VagaController(vagaServiceMock).atualizar(vaga.id, vaga)
+
+        then:
+        response != null
+    }
 }
