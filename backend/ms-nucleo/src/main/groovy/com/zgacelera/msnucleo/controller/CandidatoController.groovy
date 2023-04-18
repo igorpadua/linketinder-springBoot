@@ -24,6 +24,7 @@ class CandidatoController {
     }
 
     @GetMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
     Candidato buscarPorId(@PathVariable Integer id) {
         return candidatoService.buscarPorId(id)
                 .orElseThrow(() ->
@@ -32,15 +33,27 @@ class CandidatoController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     List<Candidato> buscarTodos() {
         return candidatoService.buscarTodos()
     }
 
     @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void deletar(@PathVariable Integer id) {
         candidatoService.buscarPorId(id).map { candidato ->
             candidatoService.deletar(candidato)
             return Void.TYPE
+        }.orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "Candidato não encontrado"))
+    }
+
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.OK)
+    Candidato atualizar(@PathVariable Integer id, @RequestBody @Valid Candidato candidato) {
+        return candidatoService.buscarPorId(id).map { candidatoExistente ->
+            candidato.id = candidatoExistente.id
+            return candidatoService.salvar(candidato)
         }.orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Candidato não encontrado"))
     }
