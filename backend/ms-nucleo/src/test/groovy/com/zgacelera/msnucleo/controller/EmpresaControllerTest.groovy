@@ -2,9 +2,11 @@ package com.zgacelera.msnucleo.controller
 
 import com.zgacelera.msnucleo.model.entity.Empresa
 import com.zgacelera.msnucleo.service.EmpresaServiceMock
+import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.web.server.ResponseStatusException
 import spock.lang.Specification
 
+@SpringBootTest
 class EmpresaControllerTest extends Specification {
 
     EmpresaServiceMock empresaServiceMock

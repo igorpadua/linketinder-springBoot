@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -24,8 +25,8 @@ class VagaController {
         this.vagaService = vagaService
     }
 
-    @GetMapping
-    Vaga salvar(Vaga vaga) {
+    @PostMapping
+    Vaga salvar(@RequestBody Vaga vaga) {
         return vagaService.salvar(vaga)
     }
 
@@ -41,8 +42,8 @@ class VagaController {
         return vagaService.buscarTodos()
     }
 
-    @DeleteMapping
-    void deletar(Integer id) {
+    @DeleteMapping("/{id}")
+    void deletar(@PathVariable Integer id) {
         vagaService.buscarPorId(id).map { vaga ->
             vagaService.deletar(vaga)
             return Void.TYPE
