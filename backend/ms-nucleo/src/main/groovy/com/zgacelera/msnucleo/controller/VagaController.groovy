@@ -32,4 +32,9 @@ class VagaController {
                 .orElseThrow(
                 { new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada") } )
     }
+
+    @GetMapping
+    List<Vaga> buscarTodos() {
+        return vagaService.buscarTodos()
+    }
 }

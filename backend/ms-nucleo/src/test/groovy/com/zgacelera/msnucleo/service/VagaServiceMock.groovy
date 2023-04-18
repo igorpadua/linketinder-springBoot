@@ -22,4 +22,9 @@ class VagaServiceMock implements VagaService {
         }
         return Optional.empty()
     }
+
+    @Override
+    List<Vaga> buscarTodos() {
+        return [this.vaga]
+    }
 }

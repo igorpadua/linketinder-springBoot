@@ -45,4 +45,12 @@ class VagaControllerTest extends Specification {
         thrown(ResponseStatusException)
     }
 
+    void "Busca todas as vagas"() {
+        when:
+        List<Vaga> response = new VagaController(vagaServiceMock).buscarTodos()
+
+        then:
+        response != null
+    }
+
 }
