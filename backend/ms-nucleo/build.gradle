@@ -27,6 +27,7 @@ dependencies {
 
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
