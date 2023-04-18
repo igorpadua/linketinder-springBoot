@@ -4,7 +4,8 @@ import com.zgacelera.msnucleo.model.entity.Candidato
 
 interface CandidatoService {
     Candidato salvar(Candidato candidato)
-    Candidato buscarPorId(Integer id)
+    Optional<Candidato> buscarPorId(Integer id)
     List<Candidato> buscarTodos()
-    Candidato deletar(Integer id)
+    void deletar(Integer id)
+    void deletar(Candidato candidato)
 }
