@@ -1,6 +1,8 @@
 package com.zgacelera.msnucleo.service
 
 import com.zgacelera.msnucleo.model.entity.Vaga
+import org.springframework.http.HttpStatus
+import org.springframework.web.server.ResponseStatusException
 
 class VagaServiceMock implements VagaService {
 
@@ -26,5 +28,12 @@ class VagaServiceMock implements VagaService {
     @Override
     List<Vaga> buscarTodos() {
         return [this.vaga]
+    }
+
+    @Override
+    void deletar(Vaga vaga) {
+        if (vaga.id != 1) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada")
+        }
     }
 }

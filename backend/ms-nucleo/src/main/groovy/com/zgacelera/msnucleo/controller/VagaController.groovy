@@ -4,6 +4,7 @@ import com.zgacelera.msnucleo.model.entity.Vaga
 import com.zgacelera.msnucleo.service.VagaService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -30,11 +31,21 @@ class VagaController {
     Vaga buscarPorId(@PathVariable Integer id) {
         return vagaService.buscarPorId(id)
                 .orElseThrow(
-                { new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada") } )
+                        { new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada") })
     }
 
     @GetMapping
     List<Vaga> buscarTodos() {
         return vagaService.buscarTodos()
+    }
+
+    @DeleteMapping
+    void deletar(Integer id) {
+        vagaService.buscarPorId(id).map { vaga ->
+            vagaService.deletar(vaga)
+            return Void.TYPE
+        }.orElseThrow {
+            new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada")
+        }
     }
 }

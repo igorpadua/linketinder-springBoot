@@ -53,4 +53,22 @@ class VagaControllerTest extends Specification {
         response != null
     }
 
+    void "Deleta vaga"() {
+        when:
+        new VagaController(vagaServiceMock).deletar(vaga.id)
+
+        then:
+        noExceptionThrown()
+    }
+
+    void "Deleta vaga inexistente"() {
+        given:
+        final Integer id_inexistente = 2
+
+        when:
+        new VagaController(vagaServiceMock).deletar(id_inexistente)
+
+        then:
+        thrown(ResponseStatusException)
+    }
 }

@@ -6,4 +6,5 @@ interface VagaService {
     Vaga salvar(Vaga vaga)
     Optional<Vaga> buscarPorId(Integer id)
     List<Vaga> buscarTodos()
+    void deletar(Vaga vaga)
 }
