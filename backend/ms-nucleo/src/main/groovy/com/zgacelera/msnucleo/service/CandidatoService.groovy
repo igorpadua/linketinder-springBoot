@@ -6,6 +6,5 @@ interface CandidatoService {
     Candidato salvar(Candidato candidato)
     Optional<Candidato> buscarPorId(Integer id)
     List<Candidato> buscarTodos()
-    void deletar(Integer id)
     void deletar(Candidato candidato)
 }

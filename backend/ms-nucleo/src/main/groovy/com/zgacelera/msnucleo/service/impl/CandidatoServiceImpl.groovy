@@ -38,11 +38,6 @@ class CandidatoServiceImpl implements CandidatoService {
 
     @Override
     @Transactional
-    void deletar(Integer id) {
-        candidatoRepository.deleteById(id)
-    }
-
-    @Override
     void deletar(Candidato candidato) {
         candidatoRepository.delete(candidato)
     }
