@@ -14,4 +14,12 @@ class VagaServiceMock implements VagaService {
     Vaga salvar(Vaga vaga) {
         return this.vaga
     }
+
+    @Override
+    Optional<Vaga> buscarPorId(Integer id) {
+        if (id == this.vaga.id) {
+            return Optional.of(this.vaga)
+        }
+        return Optional.empty()
+    }
 }
