@@ -1,12 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 123
-    jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+    url: jdbc:postgresql://localhost:5432/msnucleo
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 123456

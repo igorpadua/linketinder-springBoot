@@ -7,7 +7,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Canonical
-@Table(name = "empresa")
+@Table(name = "empresas")
 class Empresa extends Pessoa {
     @Column(name = "cnpj")
     String cnpj
