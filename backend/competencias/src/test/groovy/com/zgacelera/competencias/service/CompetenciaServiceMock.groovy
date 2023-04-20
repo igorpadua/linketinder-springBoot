@@ -1,6 +1,8 @@
 package com.zgacelera.competencias.service
 
 import com.zgacelera.competencias.model.Competencia
+import org.springframework.http.HttpStatus
+import org.springframework.web.server.ResponseStatusException
 
 class CompetenciaServiceMock implements CompetenciaService {
 
@@ -13,5 +15,14 @@ class CompetenciaServiceMock implements CompetenciaService {
     @Override
     Competencia salvar(Competencia competencia) {
         return this.competencia
+    }
+
+    @Override
+    Optional<Competencia> buscarPorId(Long id) {
+        if (id == this.competencia.id) {
+            return Optional.of(this.competencia)
+        }
+
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Competencia não encontrada")
     }
 }
