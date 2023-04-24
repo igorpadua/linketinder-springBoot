@@ -72,4 +72,26 @@ class CompetenciaControllerTest extends Specification {
         then:
         thrown(ResponseStatusException)
     }
+
+    void "Atualiza competencia"() {
+        given:
+        competencia.nome = "Competencia atualizada"
+
+        when:
+        Competencia competenciaAtualizada = competenciaController.atualiza(competencia)
+
+        then:
+        competenciaAtualizada != null
+    }
+
+    void "Atualiza competencia inexistente"() {
+        given:
+        Competencia competenciaInexistente = new Competencia(id: 2L)
+
+        when:
+        competenciaController.atualiza(competenciaInexistente)
+
+        then:
+        thrown(ResponseStatusException)
+    }
 }
