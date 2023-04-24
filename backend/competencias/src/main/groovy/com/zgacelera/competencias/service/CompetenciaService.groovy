@@ -7,4 +7,5 @@ import org.springframework.stereotype.Service
 interface CompetenciaService {
     Competencia salvar(Competencia competencia)
     Optional<Competencia> buscarPorId(Long id)
+    List<Competencia> buscarTodas()
 }

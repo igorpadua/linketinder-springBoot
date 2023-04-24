@@ -41,12 +41,20 @@ class CompetenciaControllerTest extends Specification {
 
     void "Busca competencia por id inexistente"() {
         given:
-        Competencia competencia = new Competencia(id: 2L)
+        Long idInexistente = 2L
 
         when:
-        competenciaController.buscaPorId(competencia.id)
+        competenciaController.buscaPorId(idInexistente)
 
         then:
         thrown(ResponseStatusException)
+    }
+
+    void "Busca todas as competencias"() {
+        when:
+        List<Competencia> competencias = competenciaController.buscaTodas()
+
+        then:
+        competencias != null
     }
 }

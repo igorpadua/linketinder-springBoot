@@ -36,4 +36,10 @@ class CompetenciaController {
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Competencia não encontrada")
         )
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    List<Competencia> buscaTodas() {
+        competenciaService.buscarTodas()
+    }
 }

@@ -25,4 +25,9 @@ class CompetenciaServiceMock implements CompetenciaService {
 
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Competencia não encontrada")
     }
+
+    @Override
+    List<Competencia> buscarTodas() {
+        return [this.competencia]
+    }
 }
