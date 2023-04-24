@@ -1,6 +1,7 @@
 package com.zgacelera.competencias.controller
 
-import com.zgacelera.competencias.model.Competencia
+
+import com.zgacelera.competencias.model.entity.Competencia
 import com.zgacelera.competencias.service.CompetenciaServiceMock
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.web.server.ResponseStatusException

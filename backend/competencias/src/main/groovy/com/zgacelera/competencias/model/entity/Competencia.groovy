@@ -1,4 +1,4 @@
-package com.zgacelera.competencias.model
+package com.zgacelera.competencias.model.entity
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue

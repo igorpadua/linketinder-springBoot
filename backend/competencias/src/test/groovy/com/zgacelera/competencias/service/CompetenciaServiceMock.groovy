@@ -1,6 +1,7 @@
 package com.zgacelera.competencias.service
 
-import com.zgacelera.competencias.model.Competencia
+
+import com.zgacelera.competencias.model.entity.Competencia
 import org.springframework.http.HttpStatus
 import org.springframework.web.server.ResponseStatusException
 
