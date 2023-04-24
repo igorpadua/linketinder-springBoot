@@ -19,7 +19,7 @@ class CompetenciaServiceMock implements CompetenciaService {
 
     @Override
     Optional<Competencia> buscarPorId(Long id) {
-        if (id == this.competencia.id) {
+        if (id == 1) {
             return Optional.of(this.competencia)
         }
 
@@ -29,5 +29,12 @@ class CompetenciaServiceMock implements CompetenciaService {
     @Override
     List<Competencia> buscarTodas() {
         return [this.competencia]
+    }
+
+    @Override
+    void deletar(Competencia competencia) {
+        if (competencia.id != 1L) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Competencia não encontrada")
+        }
     }
 }

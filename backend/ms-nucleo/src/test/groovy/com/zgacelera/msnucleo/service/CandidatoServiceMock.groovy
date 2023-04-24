@@ -34,7 +34,6 @@ class CandidatoServiceMock implements CandidatoService {
     @Override
     void deletar(Candidato candidato) {
         if (candidato.id != 1) {
-            println("entoru")
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Candidato não encontrado")
         }
     }
