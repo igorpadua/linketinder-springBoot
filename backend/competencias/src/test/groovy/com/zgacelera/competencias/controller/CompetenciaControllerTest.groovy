@@ -11,16 +11,15 @@ class CompetenciaControllerTest extends Specification {
 
     CompetenciaController competenciaController
     CompetenciaServiceMock competenciaServiceMock
+    Competencia competencia
 
     void setup() {
-        competenciaServiceMock = new CompetenciaServiceMock(new Competencia(id: 1L))
+        competencia = new Competencia(id: 1L)
+        competenciaServiceMock = new CompetenciaServiceMock(competencia)
         competenciaController = new CompetenciaController(competenciaServiceMock)
     }
 
     void "Salva competencia"() {
-        given:
-        Competencia competencia = new Competencia()
-
         when:
         Competencia competenciaSalva = competenciaController.salva(competencia)
 
@@ -29,9 +28,6 @@ class CompetenciaControllerTest extends Specification {
     }
 
     void "Buscar competencia por id"() {
-        given:
-        Competencia competencia = new Competencia(id: 1L)
-
         when:
         Competencia competenciaSalva = competenciaController.buscaPorId(competencia.id)
 
@@ -56,5 +52,24 @@ class CompetenciaControllerTest extends Specification {
 
         then:
         competencias != null
+    }
+
+    void "Deleta competencia"() {
+        when:
+        competenciaController.deleta(competencia.id)
+
+        then:
+        noExceptionThrown()
+    }
+
+    void "Deleta competencia inexistente"() {
+        given:
+        Long idInexistente = 2L
+
+        when:
+        competenciaController.deleta(idInexistente)
+
+        then:
+        thrown(ResponseStatusException)
     }
 }
