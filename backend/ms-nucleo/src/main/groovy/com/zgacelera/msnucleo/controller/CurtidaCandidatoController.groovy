@@ -25,8 +25,11 @@ import org.springframework.web.server.ResponseStatusException
 @Tag(name = "CurtidaCandidato", description = "API de CurtidaCandidato")
 class CurtidaCandidatoController {
 
-    @Autowired
-    CurtidaCandidatoService curtidaCandidatoService
+    private final CurtidaCandidatoService curtidaCandidatoService
+
+    CurtidaCandidatoController(CurtidaCandidatoService curtidaCandidatoService) {
+        this.curtidaCandidatoService = curtidaCandidatoService
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
