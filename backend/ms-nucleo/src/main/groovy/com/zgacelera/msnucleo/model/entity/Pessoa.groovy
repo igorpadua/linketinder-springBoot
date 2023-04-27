@@ -4,7 +4,10 @@ import groovy.transform.Canonical
 import jakarta.persistence.*
 
 @Canonical
-@MappedSuperclass
+@Entity
+@Table(name = "pessoas")
+@DiscriminatorColumn(name = "tipo")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

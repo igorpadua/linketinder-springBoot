@@ -1,25 +1,22 @@
 -- Tabelas
 
-CREATE TABLE candidatos (
-                            id SERIAL PRIMARY KEY,
-                            nome char(15) NOT NULL,
-                            sobrenome varchar NOT NULL,
-                            data_nascimento date NOT NULL,
-                            email varchar(50) UNIQUE NOT NULL,
-                            cpf char(14) UNIQUE NOT NULL,
-                            pais varchar(50) NOT NULL,
-                            descricao varchar(100) NOT NULL,
-                            senha char(16) NOT NULL
-);
-
-CREATE TABLE empresas (
-                          id SERIAL PRIMARY KEY,
-                          nome char(15) NOT NULL,
-                          cnpj char(18) UNIQUE NOT NULL,
-                          email char(50) UNIQUE NOT NULL,
-                          descricao varchar(100) NOT NULL,
-                          pais varchar(50) NOT NULL,
-                          senha varchar(16) NOT NULL
+CREATE TABLE pessoas (
+                    id SERIAL PRIMARY KEY,
+                    nome varchar(50) NOT NULL,
+                    sobrenome varchar(50),
+                    data_nascimento date,
+                    email varchar(50) NOT NULL,
+                    pais varchar(50) NOT NULL,
+                    descricao varchar(100) NOT NULL,
+                    senha varchar(50) NOT NULL,
+                    cpf varchar(50),
+                    cnpj varchar(50),
+                    tipo varchar(50) NOT NULL CHECK (tipo IN ('candidato', 'empresa')),
+                    UNIQUE (email), UNIQUE (cpf), UNIQUE (cnpj),
+                    CHECK (tipo = 'candidato' AND cpf IS NOT NULL OR tipo = 'empresa' AND cnpj IS NOT NULL),
+                    CHECK (tipo = 'candidato' AND cnpj IS NULL OR tipo = 'empresa' AND cpf IS NULL),
+                    CHECK (tipo = 'candidato' AND sobrenome IS NOT NULL OR tipo = 'empresa' AND sobrenome IS NULL),
+                    CHECK (tipo = 'candidato' AND data_nascimento IS NOT NULL OR tipo = 'empresa' AND data_nascimento IS NULL)
 );
 
 CREATE TABLE vagas (
@@ -27,20 +24,8 @@ CREATE TABLE vagas (
                        nome varchar(50) NOT NULL,
                        descricao varchar(100) NOT NULL,
                        local_vaga varchar(50) NOT NULL,
-                       empresa_id int REFERENCES empresas(id) ON DELETE CASCADE NOT NULL
-);
-
-
-CREATE TABLE curtida_vaga (
-                              id SERIAL PRIMARY KEY,
-                              vaga_id int REFERENCES vagas(id) ON DELETE CASCADE NOT NULL,
-                              candidato_id int REFERENCES candidatos(id) ON DELETE CASCADE NOT NULL
-);
-
-CREATE TABLE curtida_candidato (
-                                   id SERIAL PRIMARY KEY,
-                                   candidato_id int REFERENCES candidatos(id) ON DELETE CASCADE NOT NULL,
-                                   vaga_id int REFERENCES vagas(id) ON DELETE CASCADE NOT NULL
+                       empresa_id integer NOT NULL,
+                       FOREIGN KEY (empresa_id) REFERENCES pessoas (id)
 );
 
 -- Insert
