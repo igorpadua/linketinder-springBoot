@@ -1,6 +1,6 @@
 package com.zgacelera.msnucleo.service.impl
 
-import com.zgacelera.msnucleo.dto.VagaDTO
+import com.zgacelera.msnucleo.model.dto.VagaDTO
 import com.zgacelera.msnucleo.model.entity.Empresa
 import com.zgacelera.msnucleo.model.entity.Vaga
 import com.zgacelera.msnucleo.model.repository.EmpresaRepository

@@ -1,6 +1,6 @@
 package com.zgacelera.msnucleo.service.impl
 
-import com.zgacelera.msnucleo.dto.CurtidaCandidatoDTO
+import com.zgacelera.msnucleo.model.dto.CurtidaCandidatoDTO
 import com.zgacelera.msnucleo.model.entity.Candidato
 import com.zgacelera.msnucleo.model.entity.CurtidaCandidato
 import com.zgacelera.msnucleo.model.entity.Vaga

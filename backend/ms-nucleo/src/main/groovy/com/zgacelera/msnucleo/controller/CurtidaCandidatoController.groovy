@@ -1,6 +1,6 @@
 package com.zgacelera.msnucleo.controller
 
-import com.zgacelera.msnucleo.dto.CurtidaCandidatoDTO
+import com.zgacelera.msnucleo.model.dto.CurtidaCandidatoDTO
 import com.zgacelera.msnucleo.model.entity.CurtidaCandidato
 import com.zgacelera.msnucleo.service.CurtidaCandidatoService
 import io.swagger.v3.oas.annotations.Operation

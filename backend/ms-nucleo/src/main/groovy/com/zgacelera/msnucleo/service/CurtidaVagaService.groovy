@@ -1,6 +1,6 @@
 package com.zgacelera.msnucleo.service
 
-import com.zgacelera.msnucleo.dto.CurtidaVagaDTO
+import com.zgacelera.msnucleo.model.dto.CurtidaVagaDTO
 import com.zgacelera.msnucleo.model.entity.CurtidaVaga
 
 interface CurtidaVagaService {

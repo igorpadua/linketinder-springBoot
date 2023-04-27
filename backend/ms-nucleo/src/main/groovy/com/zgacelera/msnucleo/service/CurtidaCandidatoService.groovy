@@ -1,6 +1,6 @@
 package com.zgacelera.msnucleo.service
 
-import com.zgacelera.msnucleo.dto.CurtidaCandidatoDTO
+import com.zgacelera.msnucleo.model.dto.CurtidaCandidatoDTO
 import com.zgacelera.msnucleo.model.entity.CurtidaCandidato
 
 interface CurtidaCandidatoService {
