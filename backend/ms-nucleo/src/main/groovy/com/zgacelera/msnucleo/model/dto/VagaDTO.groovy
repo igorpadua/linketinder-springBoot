@@ -1,4 +1,4 @@
-package com.zgacelera.msnucleo.dto
+package com.zgacelera.msnucleo.model.dto
 
 import groovy.transform.Canonical
 
