@@ -1,6 +1,1 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/msnucleo
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: 123456
+spring.profiles.active: prod
