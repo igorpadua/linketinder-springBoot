@@ -5,7 +5,6 @@ import com.zgacelera.msnucleo.model.entity.Candidato
 import com.zgacelera.msnucleo.model.entity.CurtidaCandidato
 import com.zgacelera.msnucleo.model.entity.Vaga
 import com.zgacelera.msnucleo.service.CurtidaCandidatoServiceMock
-import groovy.transform.TypeChecked
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.web.server.ResponseStatusException
 import spock.lang.Specification
