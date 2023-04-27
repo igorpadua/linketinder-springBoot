@@ -83,13 +83,15 @@ class VagaController {
             @ApiResponse(responseCode = "200", description = "Vaga atualizada com sucesso"),
             @ApiResponse(responseCode = "404", description = "Vaga não encontrada")
     ])
-    Vaga atualizar(@PathVariable Integer id, @RequestBody Vaga vaga) {
+    Vaga atualizar(@PathVariable Integer id, @RequestBody VagaDTO vagaDTO) {
         return vagaService.buscarPorId(id).map { vagaExistente ->
-            vaga.id = vagaExistente.id
-            vagaService.salvar(vaga)
-            return vaga
+            vagaDTO.id = vagaExistente.id
+            vagaService.salvar(vagaDTO)
+            return vagaExistente
         }.orElseThrow {
             new ResponseStatusException(HttpStatus.NOT_FOUND, "Vaga não encontrada")
         }
     }
+
 }
+
