@@ -1,5 +1,6 @@
 package com.zgacelera.msnucleo.service
 
+import com.zgacelera.msnucleo.dto.VagaDTO
 import com.zgacelera.msnucleo.model.entity.Vaga
 import org.springframework.http.HttpStatus
 import org.springframework.web.server.ResponseStatusException
@@ -13,7 +14,7 @@ class VagaServiceMock implements VagaService {
     }
 
     @Override
-    Vaga salvar(Vaga vaga) {
+    Vaga salvar(VagaDTO vagaDTO) {
         return this.vaga
     }
 

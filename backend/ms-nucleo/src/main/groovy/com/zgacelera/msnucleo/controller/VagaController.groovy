@@ -1,5 +1,6 @@
 package com.zgacelera.msnucleo.controller
 
+import com.zgacelera.msnucleo.dto.VagaDTO
 import com.zgacelera.msnucleo.model.entity.Vaga
 import com.zgacelera.msnucleo.service.VagaService
 import io.swagger.v3.oas.annotations.Operation
@@ -36,8 +37,8 @@ class VagaController {
             @ApiResponse(responseCode = "201", description = "Vaga criada com sucesso"),
             @ApiResponse(responseCode = "400", description = "Erro de validação")
     ])
-    Vaga salvar(@RequestBody Vaga vaga) {
-        return vagaService.salvar(vaga)
+    Vaga salvar(@RequestBody VagaDTO vagaDTO) {
+        return vagaService.salvar(vagaDTO)
     }
 
     @GetMapping("/{id}")
