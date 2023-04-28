@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Candidato} from "../../model/candidato";
+import {Candidato} from "../../model/candidato.model";
 
 @Component({
   selector: 'app-cadastro-candidato',
