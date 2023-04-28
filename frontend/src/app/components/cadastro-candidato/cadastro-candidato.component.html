@@ -1,0 +1,31 @@
+<form class="padding-padrao">
+  <h1>Cadastro de Candidato</h1>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.nome" d class="form-control" type="text" name="nome" placeholder="Nome">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.sobrenome" class="form-control" type="text" name="sobrenome" placeholder="Sobrenome">
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="data_nascimento">Data de Nascimento</label>
+    <input [ngModel]="candidato.dataNascimento | date:'yyyy-MM-dd'"
+           (ngModelChange)="candidato.dataNascimento = $event" class="form-control"
+           id="data_nascimento" type="date" name="data_nascimento" placeholder="Data de Nascimento">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.cpf" class="form-control" type="text" name="cpf" placeholder="CPF">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.pais" class="form-control" type="text" name="pais" placeholder="País">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.email" class="form-control" type="email" name="email" placeholder="E-mail">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.descricao" class="form-control" type="text" name="descricao" placeholder="Descrição">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="candidato.senha" class="form-control" type="password" name="senha" placeholder="Senha">
+  </div>
+  <button (click)="criarCandidato()" class="btn btn-primary" type="submit">Cadastrar</button>
+</form>
