@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/competencias
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 123456
+server.port: 8081
