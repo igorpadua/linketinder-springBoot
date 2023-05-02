@@ -3,4 +3,5 @@ export interface Vaga {
   nome: string;
   descricao: string;
   local: string;
+  empresaId?: number;
 }

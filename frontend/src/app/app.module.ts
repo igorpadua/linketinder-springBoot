@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import { LikeVagaComponent } from './components/like-vaga/like-vaga.component';
 import { CadastroEmpresaComponent } from './components/cadastro-empresa/cadastro-empresa.component';
+import { CadastroVagaComponent } from './components/cadastro-vaga/cadastro-vaga.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CadastroEmpresaComponent } from './components/cadastro-empresa/cadastro
     CadastroCandidatoComponent,
     LoginComponent,
     LikeVagaComponent,
-    CadastroEmpresaComponent
+    CadastroEmpresaComponent,
+    CadastroVagaComponent
   ],
   imports: [
     BrowserModule,
