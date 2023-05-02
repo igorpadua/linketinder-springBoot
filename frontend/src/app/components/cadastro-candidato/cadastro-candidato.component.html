@@ -22,7 +22,8 @@
     <input [(ngModel)]="candidato.email" class="form-control" type="email" name="email" placeholder="E-mail">
   </div>
   <div class="mb-3">
-    <input [(ngModel)]="candidato.descricao" class="form-control" type="text" name="descricao" placeholder="Descrição">
+    <textarea [(ngModel)]="candidato.descricao" class="form-control" type="text" name="descricao" placeholder="Descrição">
+    </textarea>
   </div>
   <div class="mb-3">
     <input [(ngModel)]="candidato.senha" class="form-control" type="password" name="senha" placeholder="Senha">

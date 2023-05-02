@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class VagaServiceService {
+export class VagaService {
 
   baseUrl: string = 'http://localhost:8080/vaga';
 

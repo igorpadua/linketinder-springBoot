@@ -9,13 +9,15 @@ import {RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import { LikeVagaComponent } from './components/like-vaga/like-vaga.component';
+import { CadastroEmpresaComponent } from './components/cadastro-empresa/cadastro-empresa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroCandidatoComponent,
     LoginComponent,
-    LikeVagaComponent
+    LikeVagaComponent,
+    CadastroEmpresaComponent
   ],
   imports: [
     BrowserModule,

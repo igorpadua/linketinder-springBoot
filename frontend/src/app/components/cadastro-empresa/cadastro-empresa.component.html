@@ -1,0 +1,22 @@
+<form class="padding-padrao">
+  <h1>Cadastro de Empresa</h1>
+  <div class="mb-3">
+    <input [(ngModel)]="empresa.nome" class="form-control" type="text" name="nome" placeholder="Nome">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="empresa.cnpj" class="form-control" type="text" name="cnpj" placeholder="cnpj">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="empresa.pais" class="form-control" type="text" name="pais" placeholder="País">
+  </div>
+  <div class="mb-3">
+    <textarea [(ngModel)]="empresa.descricao" class="form-control" name="descricao" placeholder="Descrição"></textarea>
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="empresa.email" class="form-control" type="email" name="email" placeholder="E-mail">
+  </div>
+  <div class="mb-3">
+    <input [(ngModel)]="empresa.senha" class="form-control" type="password" name="senha" placeholder="Senha">
+  </div>
+  <button (click)="createEmpresa()" class="btn btn-primary" type="submit">Cadastrar</button>
+</form>

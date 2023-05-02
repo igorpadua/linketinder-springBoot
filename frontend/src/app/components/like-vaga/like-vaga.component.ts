@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Vaga} from "../../model/vaga.model";
-import {VagaServiceService} from "../../service/vaga.service.service";
+import {VagaService} from "../../service/vaga.service";
 
 @Component({
   selector: 'app-like-vaga',
@@ -16,7 +16,7 @@ export class LikeVagaComponent implements OnInit {
   }
   vagas: Vaga[] = [];
 
-  constructor(private vagaService: VagaServiceService) {
+  constructor(private vagaService: VagaService) {
   }
 
   ngOnInit(): void {

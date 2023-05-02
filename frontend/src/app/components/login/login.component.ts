@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../model/user.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,12 @@ export class LoginComponent implements OnInit {
     senha: ''
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
   }
 
   login(): void {
-    console.log(this.user)
+    this.router.navigate(['/like-vaga']);
   }
 }
