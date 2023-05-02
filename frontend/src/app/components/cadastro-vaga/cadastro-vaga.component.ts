@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Vaga} from "../../model/vaga.model";
+import {VagaService} from "../../service/vaga.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cadastro-vaga',
@@ -14,10 +16,13 @@ export class CadastroVagaComponent {
     local: '',
   }
 
-  constructor() { }
+  constructor(private vagaService: VagaService, private router: Router) { }
 
   cadastrarVaga() {
-    console.log(this.vaga);
+    this.vagaService.create(this.vaga).subscribe(() => {
+      this.vagaService.showMessage('Vaga cadastrada com sucesso!')
+      this.router.navigate(['/like-candidato'])
+    })
   }
 }
 

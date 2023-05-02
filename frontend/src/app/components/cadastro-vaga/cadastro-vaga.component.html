@@ -9,5 +9,8 @@
   <div class="mb-3">
     <textarea [(ngModel)]="vaga.descricao" class="form-control" name="descricao" placeholder="Descrição"></textarea>
   </div>
+  <div class="mb-3">
+    <input [(ngModel)]="vaga.empresaId" class="form-control" type="number" name="idEmpresa" placeholder="idEmpresa">
+  </div>
   <button (click)="cadastrarVaga()" class="btn btn-primary" type="submit">Cadastrar</button>
 </form>

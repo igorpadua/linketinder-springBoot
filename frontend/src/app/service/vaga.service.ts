@@ -12,6 +12,14 @@ export class VagaService {
 
   constructor(private http: HttpClient) { }
 
+  showMessage(msg: string): void {
+    alert(msg)
+  }
+
+  create(vaga: Vaga): Observable<Vaga> {
+    return this.http.post<Vaga>(this.baseUrl, vaga);
+  }
+
   read(): Observable<Vaga[]> {
     return this.http.get<Vaga[]>(this.baseUrl);
   }
