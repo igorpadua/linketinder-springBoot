@@ -2,11 +2,12 @@ import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {CadastroCandidatoComponent} from "./components/cadastro-candidato/cadastro-candidato.component";
 import {LoginComponent} from "./components/login/login.component";
+import {LikeVagaComponent} from "./components/like-vaga/like-vaga.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'like-vaga',
+    component: LikeVagaComponent
   }
 ]
 

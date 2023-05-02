@@ -8,12 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 import {RouterOutlet} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
+import { LikeVagaComponent } from './components/like-vaga/like-vaga.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroCandidatoComponent,
-    LoginComponent
+    LoginComponent,
+    LikeVagaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<div class="padding-padrao">
+  <h1>Vagas</h1>
+
+  <div class="vaga">
+    <p>Vaga: <strong>{{ vaga.nome }}</strong></p>
+    <p>Descrição: <strong>{{ vaga.descricao }}</strong></p>
+    <p>Local: <strong>{{ vaga.local }}</strong></p>
+    <p>Competencias: <strong>Várias competencias</strong></p>
+  </div>
+
+  <button (click)="dislike()" class="btn btn-danger">Deslike</button>
+  <button (click)="like()" class="btn btn-primary">Like</button>
+</div>
