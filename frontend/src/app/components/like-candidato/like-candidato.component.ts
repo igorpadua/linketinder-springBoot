@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Candidato} from "../../model/candidato.model";
 import {CandidatoService} from "../../service/candidato.service";
+import {CurtidaVagaService} from "../../service/curtida-vaga.service";
+import {Curtida} from "../../model/curtida.model";
 
 @Component({
   selector: 'app-like-candidato',
@@ -23,7 +25,14 @@ export class LikeCandidatoComponent implements OnInit {
 
   candidatos: Candidato[] = []
 
-  constructor(private candidatoService: CandidatoService) {}
+  idVaga: number | undefined
+
+  curtidaVaga: Curtida = {
+    candidato_id: 0,
+    vaga_id: 0
+  }
+
+  constructor(private candidatoService: CandidatoService, private curtidaVagaService: CurtidaVagaService) {}
 
   ngOnInit(): void {
     this.candidatoService.read().subscribe(candidatos => {
@@ -44,10 +53,16 @@ export class LikeCandidatoComponent implements OnInit {
 
   like() {
     this.proximo()
+    if (this.candidato.id != null && this.idVaga != null) {
+      this.curtidaVaga.candidato_id = this.candidato.id
+      this.curtidaVaga.vaga_id = this.idVaga
+      this.curtidaVagaService.create(this.curtidaVaga).subscribe()
+    }
   }
 
   dislike() {
     this.proximo()
+    this.candidatos = this.candidatos.filter(candidato => candidato.id != this.candidato.id)
   }
 
 }

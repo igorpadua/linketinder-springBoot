@@ -49,7 +49,7 @@ export class LikeVagaComponent implements OnInit {
     if (this.vaga.id != null && this.idCandidato != null) {
       this.curtidaCandidato.vaga_id = this.vaga.id;
       this.curtidaCandidato.candidato_id = this.idCandidato;
-      this.curtidaCandidatoService.create(this.curtidaCandidato).subscribe(() => {});
+      this.curtidaCandidatoService.create(this.curtidaCandidato).subscribe();
     }
   }
 
