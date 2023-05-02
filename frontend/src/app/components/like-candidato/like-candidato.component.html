@@ -7,7 +7,13 @@
     <p>Data Nascimento: <strong>{{ candidato.dataNascimento.getDate() + 1}}
       / {{candidato.dataNascimento.getMonth() + 1}}
       / {{candidato.dataNascimento.getFullYear()}}</strong></p>
-    <p>Competencias: <strong>Várias competencias</strong></p>
+    <p>Competencias: <strong *ngFor="let competencia of competencias">
+      <br>
+      {{ competencia.nome }} -
+      {{ competencia.nivel }}
+    </strong></p>
+
+
   </div>
 
   <div class="mb-3">
