@@ -19,4 +19,8 @@ export class CandidatoService {
   create(candidato: Candidato): Observable<Candidato> {
     return this.http.post<Candidato>(this.baseUrl, candidato);
   }
+
+  read(): Observable<Candidato[]> {
+    return this.http.get<Candidato[]>(this.baseUrl);
+  }
 }

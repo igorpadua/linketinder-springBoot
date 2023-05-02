@@ -1,0 +1,15 @@
+<div class="padding-padrao">
+  <h1>Candidatos</h1>
+
+  <div class="candidato">
+    <p>Pais: <strong>{{ candidato.pais }}</strong></p>
+    <p>Descrição: <strong>{{ candidato.descricao }}</strong></p>
+    <p>Data Nascimento: <strong>{{ candidato.dataNascimento.getDate() + 1}}
+      / {{candidato.dataNascimento.getMonth() + 1}}
+      / {{candidato.dataNascimento.getFullYear()}}</strong></p>
+    <p>Competencias: <strong>Várias competencias</strong></p>
+  </div>
+
+  <button (click)="dislike()" class="btn btn-danger">Deslike</button>
+  <button (click)="like()" class="btn btn-primary">Like</button>
+</div>
