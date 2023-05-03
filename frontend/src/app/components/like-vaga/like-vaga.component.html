@@ -5,7 +5,11 @@
     <p>Vaga: <strong>{{ vaga.nome }}</strong></p>
     <p>Descrição: <strong>{{ vaga.descricao }}</strong></p>
     <p>Local: <strong>{{ vaga.local }}</strong></p>
-    <p>Competencias: <strong>Várias competencias</strong></p>
+    <p>Competencias: <strong *ngFor="let competencia of competencias">
+      <br>
+      {{ competencia.nome }} -
+      {{ competencia.nivel }}
+    </strong></p>
   </div>
 
   <div class="mb-3">
