@@ -1,0 +1,20 @@
+version: '3'
+services:
+  front:
+    image: angular
+    build: ./frontend/
+    ports:
+      - 4200:80
+    depends_on:
+      - ms-nucleo
+      - competencias
+  ms-nucleo:
+    image: ms-nucleo
+    build: ./backend/ms-nucleo/
+    ports:
+      - 8080:8080
+  competencias:
+    image: competencias
+    build: ./backend/competencias/
+    ports:
+      - 8081:8081
