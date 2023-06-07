@@ -1,5 +1,6 @@
 package com.zgacelera.msnucleo.controller
 
+import com.zgacelera.msnucleo.model.dto.VagaDTO
 import com.zgacelera.msnucleo.model.entity.Vaga
 import com.zgacelera.msnucleo.service.VagaServiceMock
 import org.springframework.boot.test.context.SpringBootTest
@@ -10,11 +11,15 @@ import spock.lang.Specification
 class VagaControllerTest extends Specification {
 
     VagaServiceMock vagaServiceMock
-    Vaga vaga
+    VagaDTO vaga
 
     void setup() {
-        vaga = new Vaga()
+        vaga = new VagaDTO()
         vaga.id = 1
+        vaga.nome = "Vaga 1"
+        vaga.descricao = "Descrição da vaga 1"
+        vaga.local = "Local da vaga 1"
+        vaga.empresaId = 1
         vagaServiceMock = new VagaServiceMock(vaga)
     }
 
