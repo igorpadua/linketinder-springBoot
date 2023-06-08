@@ -8,7 +8,7 @@ Feito por Igor Moreira Pádua.
 
 # Tecnologias
 
-O programa é um microserviço divido da seguinte forma:
+O programa é um microserviço divido da seguinte forma, cada um deles estão em container docker:
 
 ![image](https://github.com/igorpadua/linketinder-springBoot/assets/40117861/994eaf66-d8ec-44b5-91d5-749717c3a0d2)
 
